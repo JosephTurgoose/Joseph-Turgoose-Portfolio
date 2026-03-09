@@ -1,0 +1,80 @@
+
+
+
+.home-container {
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* HERO SECTION */
+.hero {
+    margin: 0;
+    height: 80vh;
+    margin-bottom: -100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+.hero-title {
+    font-size: 3rem;
+    margin: 0;
+}
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: #bbb;
+}
+
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+
+/* ABOUT SECTION */
+
+.about-me {
+    background-color: #415588;
+    color: white;
+    padding: 30px 50px 50px 100px;
+    margin: auto;
+    border-top: 10px solid #bbb;
+}
+.about-me p {
+    font-size: 1.13rem;
+}
+
+
+/* Projects Section */
+
+.projects {
+    background-color: #415588;
+    color: white;
+    padding: 30px 50px 80px 100px;
+    margin: auto;
+    border-top: 10px solid white;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+.bullet {
+    font-size: 1.3rem;
+}
+.bullet p {
+    font-size: 1.0rem;
+    padding-left: 16px;
+}
+
+
+/* Footer */
+
+footer {
+    margin-bottom: 100px;
+}
