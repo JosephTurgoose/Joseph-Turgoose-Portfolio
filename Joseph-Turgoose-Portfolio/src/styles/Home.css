@@ -1,15 +1,22 @@
 
 
+/* Everything */
+* {
+    transition: all .5s;
+}
 
+/* Page */
 .home-container {
   font-family: Arial, sans-serif;
   color: #222;
 }
 
+
+
 /* HERO SECTION */
 .hero {
-    margin: 0;
-    height: 80vh;
+    margin: 0 auto;
+    height: 70vh;
     margin-bottom: -100px;
     display: flex;
     flex-direction: column;
@@ -19,15 +26,66 @@
     color: white;
     text-align: center;
 }
+
+/**/
 .hero-title {
     font-size: 3rem;
     margin: 0;
+    position: relative;
+    text-decoration: none;
 }
-.hero-subtitle {
-    font-size: 1.4rem;
-    color: #bbb;
+.hero-title::after {
+    content: "";
+    position: absolute;
+    left: -5%; /* This keeps it center because of the extra 10% width */
+    bottom: 0;
+    height: 4px; /* Thickness */
+    width: 110%;
+    background-color: #6ed1ff;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+.hero-title:hover {
+    color: #6ed1ff;
+}
+.hero-title:hover::after {
+    transform: scaleX(1);
 }
 
+/**/
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #bbb;
+}
+.hero-subtitle:hover {
+    color: white;
+}
+/**/
+.hero-subtitle-2 {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-top: -10px;
+    opacity: .8;
+}
+.hero-subtitle-2:hover {
+    color: white;
+    opacity: 1;
+}
+
+/**/
+.summary {
+    font-size: 1.1rem;
+    max-width: 55%;
+    color: #bbb;
+}
+.summary:hover {
+    color: #fff;
+}
+
+
+
+/* Common Stuff */
 
 h3 {
     font-size: 2rem;
@@ -35,30 +93,79 @@ h3 {
     color: white;
 }
 
-
-/* ABOUT SECTION */
-
-.about-me {
+section {
+    justify-content: center;
+    max-width: 75%;
     background-color: #415588;
     color: white;
-    padding: 30px 50px 50px 100px;
+    padding: 30px 100px 30px 100px;
     margin: auto;
-    border-top: 10px solid #bbb;
 }
+section:not(.hero) { /* Don't give the borders to the top section */
+    border-top: 6px solid #fff;
+    border-right: 4px solid #fff;
+    border-left: 4px solid #fff;
+}
+
+.disclaimer {
+    margin-top: 14px !important;
+    opacity: .7 !important;
+    font-size: .7rem !important;
+}
+
+
+
+
+
+
+/* About Me Section */
+
 .about-me p {
-    font-size: 1.13rem;
+    font-size: 1.15rem;
+    opacity: .8;
+    margin: 0 auto;
+}
+
+/**/
+.about-me div {
+    padding: 0px;
+    display: inline-block;
+    border-radius: 1rem;
+}
+.about-me div:hover {
+    padding: 14px;
+    background-color: #2c3f6f;
+}
+
+/* Email */
+.my-info {
+    color: #bbb;
+    position: relative;
+    text-decoration: none;
+    cursor:text;
+    display: inline-block;
+    margin-bottom: 4px !important;
+}
+/* Underline fading in */
+.my-info::after {
+    content: "";
+    position: absolute;
+    left: -2%;
+    bottom: 0;
+    height: 2px; /* underline thickness */
+    width: 0;
+    background-color: #6ed1ff; /* underline color */
+    transition: width 0.5s;
+}
+.my-info:hover {
+    color: #6ed1ff;
+}
+.my-info:hover::after {
+    width: 104%;
 }
 
 
-/* Projects Section */
-
-.projects {
-    background-color: #415588;
-    color: white;
-    padding: 30px 50px 80px 100px;
-    margin: auto;
-    border-top: 10px solid white;
-}
+/* Lists */
 
 .list {
     list-style: none;
@@ -66,15 +173,24 @@ h3 {
 }
 .bullet {
     font-size: 1.3rem;
+    padding: 0px;
+    border-radius: 1rem;
+}
+.bullet:hover {
+    background-color: #2c3f6f;
+    padding: 14px;
 }
 .bullet p {
     font-size: 1.0rem;
     padding-left: 16px;
+    opacity: .8;
 }
 
 
 /* Footer */
 
 footer {
+    margin: 0 auto;
     margin-bottom: 100px;
+    border-top: 6px solid #fff;
 }
