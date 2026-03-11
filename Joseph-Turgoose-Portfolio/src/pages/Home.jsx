@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import '../styles/Home.css';
 // Images
+import Me from '../assets/imgs/Me.jpg';
 import KeyCove1 from '../assets/imgs/KeyCove1.png';
 import KeyCove2 from '../assets/imgs/KeyCove2.png';
 import KeyCove3 from '../assets/imgs/KeyCove3.png';
@@ -51,12 +52,13 @@ export default function Home() {
         <div className="home-container">
             {/* Hero Section */}
             <section className="hero">
+                <img className="me" src={Me}></img>
                 <h1 className="hero-title">Joseph Turgoose</h1>
                 <p className="hero-subtitle">Fullstack Software Engineer</p>
                 <p className="hero-subtitle-2">Free-Time Game Developer</p>
 
                 <p className='summary'>
-                    Software engineer specializing in full-stack web development with experience in React, Node.js, and C#.
+                    Software engineer specializing in full-stack development with experience in React, Node.js, and C#.
                     Passionate about building practical tools and systems, with leadership experience
                     delivering production software.
                 </p>
@@ -89,7 +91,7 @@ export default function Home() {
                     <ul className='list'>
                         <li className='bullet'>Programming Languages:
                             <p className='bullet-text'>Primary: C# (.NET), Python, JavaScript</p>
-                            <p className='bullet-text'>Secondary: Typescript, Java, C++</p>
+                            <p className='bullet-text'>Secondary: Typescript, Java, C++, SQL</p>
                             <p className='bullet-text'>Design: HTML/CSS, Kotlin/XML</p>
                         </li><br></br>
                         <li className='bullet'>Frameworks:
@@ -135,9 +137,9 @@ export default function Home() {
                                 This project strengthened my ability to quickly learn new tools and
                                 opened the door to future mobile development.</p>
                             <a className='link' href="https://github.com/JosephTurgoose/KeyCove-Password-Manager">Click here to visit the GitHub repo</a>
+                            <ImageGallery images={[KeyCove1, KeyCove2, KeyCove3, KeyCove4]}>
+                            </ImageGallery>
                         </li><br></br>
-                        <ImageGallery images={[KeyCove1, KeyCove2, KeyCove3, KeyCove4]}>
-                        </ImageGallery>
                         <li className='bullet'>(Professional) Contract Frontend Development:
                             <br></br>
                             <p className='bullet-text'>CSS | React | Node.JS</p>
