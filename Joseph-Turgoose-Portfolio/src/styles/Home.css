@@ -95,16 +95,16 @@ h3 {
 
 section {
     justify-content: center;
-    max-width: 75%;
+    max-width: 70%;
     background-color: #415588;
     color: white;
     padding: 30px 100px 30px 100px;
     margin: auto;
 }
 section:not(.hero) { /* Don't give the borders to the top section */
-    border-top: 6px solid #fff;
-    border-right: 4px solid #fff;
-    border-left: 4px solid #fff;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    border-left: 5px solid #fff;
 }
 
 .disclaimer {
@@ -114,11 +114,53 @@ section:not(.hero) { /* Don't give the borders to the top section */
 }
 
 
+/* Images */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    margin-left: 10px;
+}
+.thumb {
+    width: 80px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.thumb:hover {
+    transform: scale(1.1);
+}
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    z-index: 9999;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+.large {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+
+
 
 
 
 
 /* About Me Section */
+
+.about-me {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
 
 .about-me p {
     font-size: 1.15rem;
@@ -128,12 +170,11 @@ section:not(.hero) { /* Don't give the borders to the top section */
 
 /**/
 .about-me div {
-    padding: 0px;
+    padding: 10px;
     display: inline-block;
-    border-radius: 1rem;
 }
 .about-me div:hover {
-    padding: 14px;
+    border-radius: 1rem;
     background-color: #2c3f6f;
 }
 
@@ -144,13 +185,13 @@ section:not(.hero) { /* Don't give the borders to the top section */
     text-decoration: none;
     cursor:text;
     display: inline-block;
-    margin-bottom: 4px !important;
+    margin-bottom: 6px !important;
 }
 /* Underline fading in */
 .my-info::after {
     content: "";
     position: absolute;
-    left: -2%;
+    left: -1%;
     bottom: 0;
     height: 2px; /* underline thickness */
     width: 0;
@@ -161,9 +202,20 @@ section:not(.hero) { /* Don't give the borders to the top section */
     color: #6ed1ff;
 }
 .my-info:hover::after {
-    width: 104%;
+    width: 102%;
 }
 
+
+/* Links */
+.link {
+    color: white;
+    font-size: 1.0rem;
+    padding-left: 16px;
+    opacity: .8;
+}
+.link:hover {
+    color: #6ed1ff;
+}
 
 /* Lists */
 
@@ -173,12 +225,18 @@ section:not(.hero) { /* Don't give the borders to the top section */
 }
 .bullet {
     font-size: 1.3rem;
-    padding: 0px;
-    border-radius: 1rem;
+    padding: 10px;
+    margin: -8px;
 }
 .bullet:hover {
+    border-radius: 1rem;
     background-color: #2c3f6f;
-    padding: 14px;
+}
+.bullet:hover p {
+    opacity: 1;
+}
+.bullet:hover a {
+    opacity: 1;
 }
 .bullet p {
     font-size: 1.0rem;
@@ -192,5 +250,5 @@ section:not(.hero) { /* Don't give the borders to the top section */
 footer {
     margin: 0 auto;
     margin-bottom: 100px;
-    border-top: 6px solid #fff;
+    border-top: 5px solid #fff;
 }

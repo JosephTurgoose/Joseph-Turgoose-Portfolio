@@ -1,6 +1,50 @@
 
+import { useState } from 'react';
 
 import '../styles/Home.css';
+// Images
+import KeyCove1 from '../assets/imgs/KeyCove1.png';
+import KeyCove2 from '../assets/imgs/KeyCove2.png';
+import KeyCove3 from '../assets/imgs/KeyCove3.png';
+import KeyCove4 from '../assets/imgs/KeyCove4.png';
+
+// Functionality
+function ImageGallery({ images }) {
+    //
+    const [selected, setSelected] = useState(null);
+    //
+    const open = (img) => {
+        setSelected(img);
+        document.body.style.overflow = "hidden"; // disable scroll
+        };
+    const close = () => {
+        setSelected(null);
+        document.body.style.overflow = ""; // restore scroll
+    };
+    ////
+    return (
+        <>
+            <div className="image-gallery">
+                {images.map((img, i) => (
+                    <img
+                        key={i}
+                        src={img}
+                        className="thumb"
+                        onClick={() => open(img)}
+                    />
+                ))}
+            </div>
+
+            {selected && (
+                <div className="overlay" onClick={close}>
+                    <img src={selected} className="large" />
+                </div>
+            )}
+        </>
+    );
+}
+
+/////////////////////
 
 export default function Home() {
     return (
@@ -34,7 +78,7 @@ export default function Home() {
                     <p className='my-info'>GitHub: https://github.com/JosephTurgoose</p><br></br>
                     <p className='my-info'>LinkedIn: www.linkedin.com/in/joseph-turgoose-b41471281</p><br></br>
 
-                    <p className='disclaimer'>(Images coming soon)</p>
+                    {/* <p className='disclaimer'>(Images coming soon)</p> */}
                 </div>
             </section>
 
@@ -80,6 +124,7 @@ export default function Home() {
                                 with the project manager and client.  Despite being set back by technological changes halfway through,
                                 we still finished ahead of schedule with lots of documentation to guide future development.
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                         <li className='bullet'>Password Manager App:
                             <br></br>
@@ -89,13 +134,26 @@ export default function Home() {
                                 limitations of other password managers on the Google Play Store.
                                 This project strengthened my ability to quickly learn new tools and
                                 opened the door to future mobile development.</p>
+                            <a className='link' href="https://github.com/JosephTurgoose/KeyCove-Password-Manager">Click here to visit the GitHub repo</a>
                         </li><br></br>
-                        <li className='bullet'>(Professional) Frontend Development:
+                        <ImageGallery images={[KeyCove1, KeyCove2, KeyCove3, KeyCove4]}>
+                        </ImageGallery>
+                        <li className='bullet'>(Professional) Contract Frontend Development:
                             <br></br>
-                            <p className='bullet-text'>CSS | Node.JS</p>
-                            <p className='bullet-text'>There's not a ton I can say about this project, but I can say that I was professionally
-                                hired to help create designs on several clients' websites!
+                            <p className='bullet-text'>CSS | React | Node.JS</p>
+                            <p className='bullet-text'> I was hired as a contract developer to design, implement, and document web forms for several
+                                of my employer's clients.
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
+                        </li><br></br>
+                        <li className='bullet'>Custom Web Card Game:
+                            <br></br>
+                            <p className='bullet-text'>Firebase | JavaScript</p>
+                            <p className='bullet-text'> I was the primary gameplay developer for an online card game similar to both
+                                Uno and Solitaire.  My biggest contributions to the code included developing gameplay
+                                action functions and creating a secure connection between the frontend and backend systems.
+                            </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                         <li className='bullet'>Angular Course:
                             <br></br>
@@ -104,6 +162,7 @@ export default function Home() {
                                 so I took it upon myself to complete a full course to Angular.  In addition to learning Angular,
                                 this project also helped me develop my skills with Typescript and web design.
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                         <li className='bullet'>Full-Sandbox TTRPG (In-Progress):
                             <br></br>
@@ -115,6 +174,7 @@ export default function Home() {
                                 Now that most of the rules have been sorted out
                                 I'm currently developing the website and formulating a public launch plan.
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                         <li className='bullet'>Terraria Mod (In-Progress):
                             <br></br>
@@ -124,16 +184,18 @@ export default function Home() {
                                 several new classes; a new dynamic damage system; a brand new system for enchanting certain types of equipment;
                                 and more.
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                         <li className='bullet'>Private Game Projects (In-Progress):
                             <br></br>
-                            <p className='bullet-text'>C# (Unity) | GdScript (Godot)</p>
+                            <p className='bullet-text'>C# (Unity) | GdScript (Godot) | Aseprite</p>
                             <p className='bullet-text'>I've spent years learning game development in my free time and
                                 there are currently two major projects I'm working on — one in Unity and
                                 another in Godot.  Although I have halted the Unity project for reasons involving the job search and artistic limitations,
                                 the Godot project is still going strong.  All I will say now is that it'll be a
                                 Metroidvania-esque platformer with a unique twist :D
                             </p>
+                            <p className='bullet-text'> Images and links unavailable at this time.</p>
                         </li><br></br>
                     </ul>
                 </div>
